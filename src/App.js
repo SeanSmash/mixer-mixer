@@ -1,7 +1,9 @@
 import NavBar from './NavBar';
 import Search from './Search';
 import Cocktails from './Cocktails';
+import { cocktails } from './data';
 import './App.css';
+
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
         </p>
       </header>
       <Search />
-      <Cocktails />
+      <Cocktails cocktails={cocktails}/>
     </div>
   );
 }

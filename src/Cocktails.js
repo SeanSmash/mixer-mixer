@@ -1,10 +1,21 @@
 import React from "react";
+import CocktailCard from "./CocktailCard";
 
-function Cocktails(){
+function Cocktails({ cocktails }){
+
     return(
-      <p>
-        list cocktails
-      </p>
+        <div>
+        {cocktails.map(cocktail =>(
+            <CocktailCard 
+                key={cocktail.id}
+                id={cocktail.id}
+                base={cocktail.base}
+                description={cocktail.description}
+                username={cocktail.username}
+                image={cocktail.image}
+            />
+        ))}
+        </div>
     )
   }
 

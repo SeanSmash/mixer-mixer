@@ -1,15 +1,13 @@
 import React from "react";
 
-function CocktailCard({ cocktail }){
+function CocktailCard({id, base, description, username, image}){
     return(
-        <div className="cocktailCard">
-            <img src= {cocktail.image} alt="cocktail image" />
-            <p>{cocktail.username}</p>
-            <ul>
-                <li>Base Liqour: {cocktail.base}</li>
-                <li>Description: {cocktail.description}</li>
-            </ul>
-        </div>
+        <>
+            <img src={image} width="100px" alt="image" />
+            <p>{username}</p>
+            <p>Base: {base}</p>
+            <p>Description: {description}</p>
+        </>
     )
 }
 
