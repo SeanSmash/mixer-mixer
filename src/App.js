@@ -1,25 +1,24 @@
+import React, { useState } from 'react';
+import { Routes, Route } from "react-router-dom";
 import NavBar from './NavBar';
-import Search from './Search';
-import Cocktails from './Cocktails';
-import { cocktails } from './data';
+import Home from './Home';
+import About from './About';
 import './App.css';
 
 
 function App() {
+  const [page, setPage ] = useState("/")
+
   return (
     <div className="App">
-      <NavBar />
-      <header className="App-header">
-        <img src="https://craftandcocktails.co/wp-content/uploads/2020/05/COFFEE-BEAN-BAMBOO-COCKTAIL-5-520x400.jpg" alt="logo" />
-        <p>
-          Mixer Mixer
-        </p>
-        <p>
-          A CockTale Sharing Community
-        </p>
-      </header>
-      <Search />
-      <Cocktails cocktails={cocktails}/>
+      <NavBar onPageChange={setPage} />
+      
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<h1>404 not found</h1>} />
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }

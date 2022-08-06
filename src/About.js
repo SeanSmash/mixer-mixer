@@ -2,9 +2,11 @@ import React from "react";
 
 function About(){
     return(
-      <span>
-        <button>About</button>
-      </span>
+      <div>
+        <p>
+            This is an application for sharing what your're drinking
+        </p>
+      </div>
     )
   }
 

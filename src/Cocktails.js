@@ -13,6 +13,7 @@ function Cocktails({ cocktails }){
                 description={cocktail.description}
                 username={cocktail.username}
                 image={cocktail.image}
+                dateCreated={cocktail.dateCreated}
             />
         ))}
         </div>

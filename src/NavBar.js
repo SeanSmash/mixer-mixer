@@ -2,12 +2,18 @@ import React from "react";
 import Home from "./Home";
 import About from "./About";
 
-function NavBar(){
+function NavBar( {onPageChange}){
+
+    function handleClick(e){
+        e.preventDefault()
+        onPageChange(e.target.pathname)
+    }
+
     return (
-      <div>
-        <Home />
-        <About />
-      </div>
+      <nav>
+        <a onClick={handleClick} href="/">Home</a>
+        <a onClick={handleClick} href="/about"> About</a>
+      </nav>
     )
   }
 
