@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Search from "./Search";
 import Cocktails from "./Cocktails";
-import { cocktails } from './data';
 
 
 function Home(){
+    const [ allCocktails, setAllCocktails ] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:3000/cocktails")
+        .then(r => r.json())
+        .then(data => setAllCocktails(data))
+    }, [])
+
     return(
       <div>
         <header className="App-header">
@@ -17,7 +24,7 @@ function Home(){
             </p>
         </header>
         <Search />
-        <Cocktails cocktails={cocktails}/>
+        <Cocktails cocktails={allCocktails}/>
       </div>
     )
   }

@@ -31,3 +31,8 @@ nav a.active {
 .About {
   background-color: #282c34;
 }
+
+.Cocktails {
+  display: grid;
+  grid-gap: 1em;
+}

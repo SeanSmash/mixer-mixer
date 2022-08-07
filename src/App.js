@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import NavBar from './NavBar';
 import Home from './Home';
@@ -7,7 +7,6 @@ import './App.css';
 
 
 function App() {
-  const [page, setPage ] = useState("/")
 
   return (
     <div className="App">
@@ -16,7 +15,6 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="*" element={<h1>404 not found</h1>} />
         <Route path="/" element={<Home />} />
       </Routes>
     </div>
@@ -24,3 +22,6 @@ function App() {
 }
 
 export default App;
+
+//        <Route path="*" element={<h1>404 not found</h1>} />
+
