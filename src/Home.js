@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Search from "./Search";
-import Cocktails from "./Cocktails";
+import React from "react";
+import Gallery from "./Gallery";
 
 
 function Home(){
-    const [ allCocktails, setAllCocktails ] = useState([])
-
-    useEffect(() => {
-        fetch("http://localhost:3000/cocktails")
-        .then(r => r.json())
-        .then(data => setAllCocktails(data))
-    }, [])
 
     return(
       <div>
@@ -23,8 +15,7 @@ function Home(){
                 A CockTale Sharing Community
             </p>
         </header>
-        <Search />
-        <Cocktails cocktails={allCocktails}/>
+        <Gallery />
       </div>
     )
   }
