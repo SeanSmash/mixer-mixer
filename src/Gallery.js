@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Cocktails from "./Cocktails";
 import Search from "./Search";
+import NewCocktailForm from "./NewCocktailForm";
 
 function Gallery () {
     const [ allCocktails, setAllCocktails ] = useState([])
@@ -13,6 +14,10 @@ function Gallery () {
 
     return (
         <>
+            <header>
+                <h2>Who's Mixing?</h2>
+            </header>
+            <NewCocktailForm />
             <Search />
             <Cocktails cocktails={allCocktails}/>
         </>
