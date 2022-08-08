@@ -5,6 +5,7 @@ import Home from './Home';
 import About from './About';
 import Gallery from './Gallery';
 import Login from './Login';
+import CocktailDetail from './CocktailDetail';
 import './App.css';
 
 
@@ -33,6 +34,7 @@ function App() {
           element={<Login currentUser={setCurrentUser}  />} 
         />
         <Route path="*" element={<h1>404 not found</h1>} />
+        <Route path="/gallery/:id" element={<CocktailDetail />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </div>

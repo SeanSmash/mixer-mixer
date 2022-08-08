@@ -1,7 +1,7 @@
 import React from "react";
 import CocktailCard from "./CocktailCard";
 
-function Cocktails({ cocktails }){
+function Cocktails({ cocktails, onDelete }){
 
     return(
         <div>

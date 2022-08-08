@@ -19,7 +19,7 @@ function Gallery () {
             </header>
             <NewCocktailForm />
             <Search />
-            <Cocktails cocktails={allCocktails}/>
+            <Cocktails cocktails={allCocktails} />
         </>
     )
 }
