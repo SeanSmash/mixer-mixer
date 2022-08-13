@@ -19,9 +19,10 @@ function Gallery ({ currentUser }) {
     }
 
     let cocktailsToDisplay = allCocktails.filter(cocktail =>{
+        const description = cocktail.description.toLowerCase()
         if (searchTerm === ""){
             return true
-        } else if (cocktail.description.includes(searchTerm.toLowerCase())){
+        } else if (description.includes(searchTerm.toLowerCase())){
             return true
         }
     })    

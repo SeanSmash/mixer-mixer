@@ -3,12 +3,11 @@ import React from "react";
 function CocktailCard({id, base, description, username, image, dateCreated, onDelete }){
 
     function handleDelete(){
-        if (username === "user4"){
             fetch(`http://localhost:3000/cocktails/${id}`, {
                 method:"DELETE"
             })
             onDelete(id)
-        }
+        
     }
 
     return(
