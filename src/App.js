@@ -31,7 +31,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery" element={<Gallery currentUser={currentUser} />} />
         <Route 
           path="/login" 
           element={<Login onCurrentUser={handleCurrentUser} onLoginChange={handleLoginChange} />} 

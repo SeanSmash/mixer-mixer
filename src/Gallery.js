@@ -4,7 +4,7 @@ import Search from "./Search";
 import NewCocktailForm from "./NewCocktailForm";
 import CocktailDetail from "./CocktailDetail";
 
-function Gallery () {
+function Gallery ({ currentUser }) {
     const [ allCocktails, setAllCocktails ] = useState([])
     const [ searchTerm, setSearchTerm ] = useState("")
 
@@ -21,7 +21,7 @@ function Gallery () {
     let cocktailsToDisplay = allCocktails.filter(cocktail =>{
         if (searchTerm === ""){
             return true
-        } else if (cocktail.description.includes(searchTerm)){
+        } else if (cocktail.description.includes(searchTerm.toLowerCase())){
             return true
         }
     })    
@@ -34,12 +34,16 @@ function Gallery () {
         })
     )}
 
+    function handleNewCocktail(newCocktail){
+        setAllCocktails([...allCocktails, newCocktail])
+    }
+
     return (
         <>
             <header>
                 <h2>Who's Mixing?</h2>
             </header>
-            <NewCocktailForm />
+            <NewCocktailForm currentUser={currentUser} onNewCocktail={handleNewCocktail} />
             <Search onSearchInput={handleSearch} />
             <Cocktails cocktails={cocktailsToDisplay} onDelete={handleDelete} />
         </>
