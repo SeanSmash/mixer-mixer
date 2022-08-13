@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import Cocktails from "./Cocktails";
 import Search from "./Search";
 import NewCocktailForm from "./NewCocktailForm";
+import CocktailDetail from "./CocktailDetail";
 
 function Gallery () {
     const [ allCocktails, setAllCocktails ] = useState([])
+    const [ searchTerm, setSearchTerm ] = useState("")
+    let searchWord = "bourbon"
 
     useEffect(() => {
         fetch("http://localhost:3000/cocktails")
@@ -13,8 +16,18 @@ function Gallery () {
     }, [])
 
     function handleSearch(searchTerm){
-        console.log(searchTerm)
+        setSearchTerm(searchTerm)
     }
+
+    const cocktailsToDisplay = allCocktails.filter(cocktail =>{
+        if (searchTerm === ""){
+            return true
+        } else if (cocktail.description.includes(searchTerm)){
+            return true
+        }
+    })
+
+    console.log(cocktailsToDisplay)
 
     return (
         <>
@@ -22,8 +35,8 @@ function Gallery () {
                 <h2>Who's Mixing?</h2>
             </header>
             <NewCocktailForm />
-            <Search onSearch={handleSearch} />
-            <Cocktails cocktails={allCocktails} />
+            <Search onSearchInput={handleSearch} />
+            <Cocktails cocktails={cocktailsToDisplay} />
         </>
     )
 }

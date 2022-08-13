@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Search({ onSearch }){
-    const [ searchTerm, setSearchTerm ] = useState("")
+function Search({ onSearchInput }){
 
     function handleSearchInput(e){
-        setSearchTerm(e.target.value)
+        onSearchInput(e.target.value)
     }
 
     function handleSubmit(e){
         e.preventDefault()
-        onSearch(searchTerm)
     }
 
     return(
