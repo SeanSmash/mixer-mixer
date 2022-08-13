@@ -1,7 +1,7 @@
 import React from "react";
 import CocktailCard from "./CocktailCard";
 
-function Cocktails({ cocktails, onDelete }){
+function Cocktails({ cocktails, onDelete, currentUser }){
 
     return(
         <div>
@@ -15,6 +15,7 @@ function Cocktails({ cocktails, onDelete }){
                 image={cocktail.image}
                 dateCreated={cocktail.dateCreated}
                 onDelete={onDelete}
+                currentUser={currentUser}
             />
         ))}
         </div>

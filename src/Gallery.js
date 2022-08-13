@@ -46,7 +46,11 @@ function Gallery ({ currentUser }) {
             </header>
             <NewCocktailForm currentUser={currentUser} onNewCocktail={handleNewCocktail} />
             <Search onSearchInput={handleSearch} />
-            <Cocktails cocktails={cocktailsToDisplay} onDelete={handleDelete} />
+            <Cocktails 
+                cocktails={cocktailsToDisplay} 
+                onDelete={handleDelete} 
+                currentUser={currentUser}
+            />
         </>
     )
 }

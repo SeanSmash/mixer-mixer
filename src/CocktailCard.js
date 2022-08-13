@@ -1,9 +1,9 @@
 import React from "react";
 
-function CocktailCard({id, base, description, username, image, dateCreated, onDelete }){
+function CocktailCard({id, base, description, username, image, dateCreated, onDelete, currentUser }){
 
     function handleDelete(){
-        if (username === "ss"){
+        if (username === currentUser){
             fetch(`http://localhost:3000/cocktails/${id}`, {
                 method:"DELETE"
             })
