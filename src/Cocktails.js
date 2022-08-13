@@ -14,6 +14,7 @@ function Cocktails({ cocktails, onDelete }){
                 username={cocktail.username}
                 image={cocktail.image}
                 dateCreated={cocktail.dateCreated}
+                onDelete={onDelete}
             />
         ))}
         </div>

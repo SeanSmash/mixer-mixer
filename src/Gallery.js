@@ -7,7 +7,6 @@ import CocktailDetail from "./CocktailDetail";
 function Gallery () {
     const [ allCocktails, setAllCocktails ] = useState([])
     const [ searchTerm, setSearchTerm ] = useState("")
-    let searchWord = "bourbon"
 
     useEffect(() => {
         fetch("http://localhost:3000/cocktails")
@@ -27,6 +26,10 @@ function Gallery () {
         }
     })
 
+    function handleDelete(id){
+        console.log(id)
+    }
+
     return (
         <>
             <header>
@@ -34,7 +37,7 @@ function Gallery () {
             </header>
             <NewCocktailForm />
             <Search onSearchInput={handleSearch} />
-            <Cocktails cocktails={cocktailsToDisplay} />
+            <Cocktails cocktails={cocktailsToDisplay} onDelete={handleDelete} />
         </>
     )
 }
