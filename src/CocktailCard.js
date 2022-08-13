@@ -8,7 +8,7 @@ function CocktailCard({id, base, description, username, image, dateCreated, onDe
                 method:"DELETE"
             })
             onDelete(id)
-        }
+        } else alert("You can only delete your posts")
     }
 
     return(
