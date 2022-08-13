@@ -7,9 +7,13 @@ function NewCocktailForm() {
         setBaseLiquor(e.target.value)
     }
 
+    function handleSubmit(e){
+        e.preventDefault()
+    }
+
     
     return (
-        <form>
+        <form onSubmit={handleSubmit} >
             <span>Start mixing: </span>
             <input onChange={onBaseLiquorInput} type="text" placeholder="base liquor" />
             <input type="text" placeholder="add your recipe, thoughts, details, etc" />

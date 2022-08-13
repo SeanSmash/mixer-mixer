@@ -12,13 +12,17 @@ function Gallery () {
         .then(data => setAllCocktails(data))
     }, [])
 
+    function handleSearch(searchTerm){
+        console.log(searchTerm)
+    }
+
     return (
         <>
             <header>
                 <h2>Who's Mixing?</h2>
             </header>
             <NewCocktailForm />
-            <Search />
+            <Search onSearch={handleSearch} />
             <Cocktails cocktails={allCocktails} />
         </>
     )

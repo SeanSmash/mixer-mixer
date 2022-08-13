@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Search(){
+function Search({ onSearch }){
+    const [ searchTerm, setSearchTerm ] = useState("")
+
+    function handleSearchInput(e){
+        setSearchTerm(e.target.value)
+    }
+
+    function handleSubmit(e){
+        e.preventDefault()
+        onSearch(searchTerm)
+    }
+
     return(
-      <form>
-        <input type="text" placeholder='Search...' />
+      <form onSubmit={handleSubmit} >
+        <input onChange={handleSearchInput} type="text" placeholder='Search...' />
       </form>
     )
   }
