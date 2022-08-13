@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Login ({ currentUser }) {
+function Login ({ onCurrentUser, onLoginChange }) {
     const [ userName, setUsername ] = useState("")
 
     function handleUserName(e){
@@ -9,7 +9,8 @@ function Login ({ currentUser }) {
 
     function handleUserNameSubmit(e){
         e.preventDefault()
-        currentUser(userName)
+        onCurrentUser(userName)
+        onLoginChange()
     }
 
     return (

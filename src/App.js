@@ -13,15 +13,18 @@ function App() {
   const [ isLoggedIn, setIsLoggedIn ] = useState(false)
   const [ currentUser, setCurrentUser ] = useState("")
 
-  function changeLogin(){
+  function handleLoginChange(){
     setIsLoggedIn((isLoggedIn) => !isLoggedIn)
+  }
+
+  function handleCurrentUser(username){
+    setCurrentUser(username)
   }
 
   return (
     <div className="App">
       <NavBar 
         currentUser={currentUser} 
-        onLogin={changeLogin} 
         loginStatus={isLoggedIn} 
       />
       
@@ -31,7 +34,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route 
           path="/login" 
-          element={<Login currentUser={setCurrentUser}  />} 
+          element={<Login onCurrentUser={handleCurrentUser} onLoginChange={handleLoginChange} />} 
         />
         <Route path="*" element={<h1>404 not found</h1>} />
         <Route path="/gallery/:id" element={<CocktailDetail />} />

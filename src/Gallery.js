@@ -27,8 +27,6 @@ function Gallery () {
         }
     })
 
-    console.log(cocktailsToDisplay)
-
     return (
         <>
             <header>
