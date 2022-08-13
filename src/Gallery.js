@@ -18,17 +18,21 @@ function Gallery () {
         setSearchTerm(searchTerm)
     }
 
-    const cocktailsToDisplay = allCocktails.filter(cocktail =>{
+    let cocktailsToDisplay = allCocktails.filter(cocktail =>{
         if (searchTerm === ""){
             return true
         } else if (cocktail.description.includes(searchTerm)){
             return true
         }
-    })
+    })    
 
     function handleDelete(id){
-        console.log(id)
-    }
+        setAllCocktails(allCocktails.filter(cocktail =>{
+            if (id !== cocktail.id){
+                return true
+            }
+        })
+    )}
 
     return (
         <>
