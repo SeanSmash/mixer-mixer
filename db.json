@@ -6,7 +6,8 @@
       "username": "user1",
       "description": "bourbon old fashioned",
       "image": "https://www.liquor.com/thmb/p24WIerjbABYLEL94S5N7B0QQro=/735x0/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__05__08113350__bourbon-old-fashioned-720x720-recipe-ade6f7780c304999be3577e565c9bcdd.jpg",
-      "dateCreated": "22-07-01T13:15:08.623Z"
+      "dateCreated": "22-07-01T13:15:08.623Z",
+      "likes": 3
     },
     {
       "id": 2,
@@ -39,6 +40,44 @@
       "image": "https://www.thespruceeats.com/thmb/3Xw0mdKr5J-2SwIxiW7NqmdwVmE=/1500x1000/filters:fill(auto,1)/gin-and-tonic-recipe-759300-hero-01-aa12e6504f944c54b8b9c589cc1d0ac6.jpg",
       "dateCreated": "2022-08-13T23:27:39.762Z",
       "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "username": "ss",
+      "comment": "this is a test",
+      "commentID": 1
+    },
+    {
+      "id": 2,
+      "username": "pp",
+      "comment": "another test",
+      "commentID": 1
+    },
+    {
+      "id": 3,
+      "username": "tt",
+      "comment": "third test",
+      "commentID": 2
+    },
+    {
+      "id": 4,
+      "username": "xx",
+      "comment": "fourth test",
+      "commentID": 2
+    },
+    {
+      "username": "ss",
+      "comment": "tst test test",
+      "commentID": 1,
+      "id": 5
+    },
+    {
+      "username": "ss",
+      "comment": "fifth test",
+      "commentID": 2,
+      "id": 6
     }
   ]
 }

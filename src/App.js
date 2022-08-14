@@ -11,7 +11,7 @@ import './App.css';
 
 function App() {
   const [ isLoggedIn, setIsLoggedIn ] = useState(false)
-  const [ currentUser, setCurrentUser ] = useState("")
+  const [ currentUser, setCurrentUser ] = useState("ss")
 
   function handleLoginChange(){
     setIsLoggedIn((isLoggedIn) => !isLoggedIn)
@@ -37,7 +37,7 @@ function App() {
           element={<Login onCurrentUser={handleCurrentUser} onLoginChange={handleLoginChange} />} 
         />
         <Route path="*" element={<h1>404 not found</h1>} />
-        <Route path="/gallery/:id" element={<CocktailDetail />} />
+        <Route path="/gallery/:id" element={<CocktailDetail currentUser={currentUser}/>} />
         <Route path="/" element={<Home />} />
       </Routes>
     </div>
