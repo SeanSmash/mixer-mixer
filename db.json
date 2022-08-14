@@ -15,7 +15,8 @@
       "username": "user2",
       "description": "vodka martini",
       "image": "https://www.liquor.com/thmb/RbdWTl4f1P8BgmCmszFq6edveKs=/735x0/vodka-martini-720x720-primary-7bf9f33f067c4f81b53d8f1f73bdd4a2.jpg",
-      "dateCreated": "22-06-01T13:15:08.623Z"
+      "dateCreated": "22-06-01T13:15:08.623Z",
+      "likes": 5
     },
     {
       "id": 3,
@@ -23,7 +24,8 @@
       "username": "user3",
       "description": "gin and tonic",
       "image": "https://www.thespruceeats.com/thmb/3Xw0mdKr5J-2SwIxiW7NqmdwVmE=/1500x1000/filters:fill(auto,1)/gin-and-tonic-recipe-759300-hero-01-aa12e6504f944c54b8b9c589cc1d0ac6.jpg",
-      "dateCreated": "22-08-01T13:15:08.623Z"
+      "dateCreated": "22-08-01T13:15:08.623Z",
+      "likes": 7
     },
     {
       "id": 4,
@@ -31,7 +33,8 @@
       "username": "user4",
       "description": "tequila sour",
       "image": "https://www.acouplecooks.com/wp-content/uploads/2020/04/Tequila-Sour-012.jpg",
-      "dateCreated": "22-09-01T13:15:08.623Z"
+      "dateCreated": "22-09-01T13:15:08.623Z",
+      "likes": 11
     },
     {
       "base": "Tequila",
@@ -39,7 +42,16 @@
       "description": "mox",
       "image": "https://www.thespruceeats.com/thmb/3Xw0mdKr5J-2SwIxiW7NqmdwVmE=/1500x1000/filters:fill(auto,1)/gin-and-tonic-recipe-759300-hero-01-aa12e6504f944c54b8b9c589cc1d0ac6.jpg",
       "dateCreated": "2022-08-13T23:27:39.762Z",
+      "likes": 1,
       "id": 5
+    },
+    {
+      "base": "gin",
+      "username": "ss",
+      "description": "mix with ice",
+      "image": "https://www.thespruceeats.com/thmb/3Xw0mdKr5J-2SwIxiW7NqmdwVmE=/1500x1000/filters:fill(auto,1)/gin-and-tonic-recipe-759300-hero-01-aa12e6504f944c54b8b9c589cc1d0ac6.jpg",
+      "dateCreated": "2022-08-14T01:12:04.073Z",
+      "id": 6
     }
   ],
   "comments": [
@@ -78,6 +90,12 @@
       "comment": "fifth test",
       "commentID": 2,
       "id": 6
+    },
+    {
+      "username": "ss",
+      "comment": "new test",
+      "commentID": 3,
+      "id": 7
     }
   ]
 }

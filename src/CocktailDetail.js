@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"
 
 function CocktailDetail ({ currentUser }) {
     const [ cocktail, setCocktail ] = useState([])
     const [ comments, setComments ] = useState([])
     const [ newComment, setNewComment ] = useState("")
-    const id = 2
+    const { id } = useParams()
 
     useEffect(() => {
         fetch(`http://localhost:3000/cocktails/${id}`)
@@ -14,7 +15,6 @@ function CocktailDetail ({ currentUser }) {
         .then(r => r.json())
         .then(data => setComments(data))
     }, [id])
-
 
     function handleDelete(){
         
@@ -54,11 +54,11 @@ function CocktailDetail ({ currentUser }) {
         <section>
             <div className="cocktail-card">
                 <img src={image} width="100px" alt={base} />
-                <p>{username} <span> {dateCreated}</span> </p>
+                <p>{username}: <span> {dateCreated}</span> </p>
                 <p>Base: {base}</p>
                 <p>Description: {description} </p>
-                <label>Likes &#10084; </label>
-                <button>{likes} Likes</button>
+                <button>Like &#10084;</button>
+                <label> {likes} Likes </label>
                 <button onClick={handleDelete} >Delete</button>
                 <form onSubmit={handleNewCommentSubmit}>
                     <input onChange={handleNewCommentInput} type="text" placeholder="add comment" />
@@ -66,7 +66,7 @@ function CocktailDetail ({ currentUser }) {
                 </form>
                 <ul>
                     {comments.map(comment => {
-                        if (comment.commentID === id){
+                        if (comment.commentID === parseInt(id, 10)){
                         return (
                             <li key={comment.id}>{comment.username}: {comment.comment}</li>
                         )
