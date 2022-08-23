@@ -7,10 +7,9 @@ function NavBar({ currentUser, loginStatus }){
     return (
         <>
             <nav>
-                <NavLink to="/home">Home</NavLink>
+                <NavLink to="/">Home</NavLink>
                 <NavLink to="/about"> About</NavLink>
                 <NavLink to="/gallery"> Gallery</NavLink>
-                <NavLink to="/login"> {(loginStatus) ? "Logout" : "Login"}</NavLink>
             </nav>
             <span>{(currentUser === "") ? null : `Welcome: ${currentUser}!`}</span>
         </>
@@ -18,3 +17,5 @@ function NavBar({ currentUser, loginStatus }){
   }
 
   export default NavBar
+
+  //                <NavLink to="/login"> {(loginStatus) ? "Logout" : "Login"}</NavLink>

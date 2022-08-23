@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function Login ({ onCurrentUser, onLoginChange }) {
     const [ userName, setUsername ] = useState("")
 
+
     function handleUserName(e){
         setUsername(e.target.value) 
     }
@@ -19,10 +20,10 @@ function Login ({ onCurrentUser, onLoginChange }) {
                 <h3>Mixer Mixer, A CockTale Sharing Community</h3>
                 <h1>Login</h1>
             </header>
-        <form onSubmit={handleUserNameSubmit}>
-            <input onChange={handleUserName} type="text" placeholder="enter username" />
-            <button>Login</button>
-        </form>
+            <form onSubmit={handleUserNameSubmit}>
+                <input onChange={handleUserName} type="text" placeholder="enter username" />
+                <button>Login</button>
+             </form>
         </div>
     )
 }

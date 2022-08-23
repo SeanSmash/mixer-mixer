@@ -37,21 +37,12 @@
       "likes": 11
     },
     {
-      "base": "Tequila",
-      "username": "ss",
-      "description": "mox",
-      "image": "https://www.thespruceeats.com/thmb/3Xw0mdKr5J-2SwIxiW7NqmdwVmE=/1500x1000/filters:fill(auto,1)/gin-and-tonic-recipe-759300-hero-01-aa12e6504f944c54b8b9c589cc1d0ac6.jpg",
-      "dateCreated": "2022-08-13T23:27:39.762Z",
-      "likes": 1,
-      "id": 5
-    },
-    {
       "base": "gin",
       "username": "ss",
-      "description": "mix with ice",
-      "image": "https://www.thespruceeats.com/thmb/3Xw0mdKr5J-2SwIxiW7NqmdwVmE=/1500x1000/filters:fill(auto,1)/gin-and-tonic-recipe-759300-hero-01-aa12e6504f944c54b8b9c589cc1d0ac6.jpg",
-      "dateCreated": "2022-08-14T01:12:04.073Z",
-      "id": 6
+      "description": "more gin",
+      "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/royal-mojito-alcoholic-cocktail-with-white-rum-royalty-free-image-1581938500.jpg?crop=0.667xw:1.00xh;0.311xw,0&resize=480:*",
+      "dateCreated": "2022-08-14T22:07:42.601Z",
+      "id": 5
     }
   ],
   "comments": [
@@ -96,6 +87,18 @@
       "comment": "new test",
       "commentID": 3,
       "id": 7
+    },
+    {
+      "username": "ss",
+      "comment": "try a new comment",
+      "commentID": 1,
+      "id": 8
+    },
+    {
+      "username": "ss",
+      "comment": "new comment",
+      "commentID": 5,
+      "id": 9
     }
   ]
 }

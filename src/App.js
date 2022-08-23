@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import NavBar from './NavBar';
 import Home from './Home';
 import About from './About';
@@ -11,7 +11,7 @@ import './App.css';
 
 function App() {
   const [ isLoggedIn, setIsLoggedIn ] = useState(false)
-  const [ currentUser, setCurrentUser ] = useState("ss")
+  const [ currentUser, setCurrentUser ] = useState("")
 
   function handleLoginChange(){
     setIsLoggedIn((isLoggedIn) => !isLoggedIn)
@@ -21,24 +21,36 @@ function App() {
     setCurrentUser(username)
   }
 
+  function navBarShow(){
+    if (isLoggedIn) {
+      return (
+        <NavBar 
+          currentUser={currentUser} 
+          loginStatus={isLoggedIn} 
+        />
+      )
+    } else {
+      return (
+        <Link to={`/login`}><button>Please Login</button></Link>
+      )
+    }
+  }
+
+
   return (
     <div className="App">
-      <NavBar 
-        currentUser={currentUser} 
-        loginStatus={isLoggedIn} 
-      />
+      {navBarShow()}
       
       <Routes>
-        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery currentUser={currentUser} />} />
         <Route 
           path="/login" 
           element={<Login onCurrentUser={handleCurrentUser} onLoginChange={handleLoginChange} />} 
         />
-        <Route path="*" element={<h1>404 not found</h1>} />
         <Route path="/gallery/:id" element={<CocktailDetail currentUser={currentUser}/>} />
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<h1>404 not found</h1>} />
       </Routes>
     </div>
   );

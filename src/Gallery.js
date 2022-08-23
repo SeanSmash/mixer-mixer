@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import Cocktails from "./Cocktails";
 import Search from "./Search";
 import NewCocktailForm from "./NewCocktailForm";
-import CocktailDetail from "./CocktailDetail";
 
 function Gallery ({ currentUser }) {
     const [ allCocktails, setAllCocktails ] = useState([])
     const [ searchTerm, setSearchTerm ] = useState("")
+
 
     useEffect(() => {
         fetch("http://localhost:3000/cocktails")
@@ -46,7 +46,10 @@ function Gallery ({ currentUser }) {
             <header>
                 <h2>Who's Mixing?</h2>
             </header>
-            <NewCocktailForm currentUser={currentUser} onNewCocktail={handleNewCocktail} />
+            <NewCocktailForm 
+                currentUser={currentUser} 
+                onNewCocktail={handleNewCocktail} 
+            />
             <Search onSearchInput={handleSearch} />
             <Cocktails 
                 cocktails={cocktailsToDisplay} 
