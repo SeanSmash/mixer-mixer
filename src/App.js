@@ -10,8 +10,8 @@ import './App.css';
 
 
 function App() {
-  const [ isLoggedIn, setIsLoggedIn ] = useState(false)
-  const [ currentUser, setCurrentUser ] = useState("")
+  const [ isLoggedIn, setIsLoggedIn ] = useState(true)
+  const [ currentUser, setCurrentUser ] = useState("user3")
 
   function handleLoginChange(){
     setIsLoggedIn((isLoggedIn) => !isLoggedIn)

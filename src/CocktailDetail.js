@@ -39,19 +39,18 @@ function CocktailDetail ({ currentUser }) {
             username: currentUser,
             comment: newComment
         }
-        fetch(`http://localhost:3000/comments/`, {
+        fetch(`http://localhost:3000/cocktails/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
                 "username": newCommentData.username,
-                "comment": newCommentData.comment,
-                "commentID": parseInt(id, 10)
+                "comment": newCommentData.comment
             })
         })
         .then(r => r.json())
-        //.then(data => setComments([...comments, data]))
+        .then(data => console.log(data))
     }
 
 

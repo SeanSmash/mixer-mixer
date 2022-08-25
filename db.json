@@ -3,20 +3,20 @@
     {
       "id": 1,
       "base": "bourbon",
-      "username": "user1",
+      "username": "ss",
       "description": "bourbon old fashioned",
       "image": "https://www.liquor.com/thmb/p24WIerjbABYLEL94S5N7B0QQro=/735x0/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__05__08113350__bourbon-old-fashioned-720x720-recipe-ade6f7780c304999be3577e565c9bcdd.jpg",
       "dateCreated": "22-07-01T13:15:08.623Z",
-      "likes": 11,
+      "likes": 2,
       "comments": [
         {
           "id": 1,
-          "username": "ss",
+          "username": "user1",
           "comment": "this drinks rocks"
         },
         {
           "id": 2,
-          "username": "pp",
+          "username": "user2",
           "comment": "i second that..."
         }
       ]
@@ -49,68 +49,30 @@
       "likes": 11
     },
     {
+      "id": 5,
       "base": "gin",
       "username": "ss",
       "description": "more gin",
       "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/royal-mojito-alcoholic-cocktail-with-white-rum-royalty-free-image-1581938500.jpg?crop=0.667xw:1.00xh;0.311xw,0&resize=480:*",
       "dateCreated": "2022-08-14T22:07:42.601Z",
-      "id": 5
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "username": "ss",
-      "comment": "this is a test",
-      "commentID": 1
+      "likes": 2,
+      "comments": [
+        {
+          "id": 1,
+          "username": "user1",
+          "comment": "this drinks rocks"
+        },
+        {
+          "id": 2,
+          "username": "user2",
+          "comment": "i second that..."
+        }
+      ]
     },
     {
-      "id": 2,
-      "username": "pp",
-      "comment": "another test",
-      "commentID": 1
-    },
-    {
-      "id": 3,
-      "username": "tt",
-      "comment": "third test",
-      "commentID": 2
-    },
-    {
-      "id": 4,
-      "username": "xx",
-      "comment": "fourth test",
-      "commentID": 2
-    },
-    {
-      "username": "ss",
-      "comment": "tst test test",
-      "commentID": 1,
-      "id": 5
-    },
-    {
-      "username": "ss",
-      "comment": "fifth test",
-      "commentID": 2,
+      "username": "user3",
+      "comment": "comment test",
       "id": 6
-    },
-    {
-      "username": "ss",
-      "comment": "new test",
-      "commentID": 3,
-      "id": 7
-    },
-    {
-      "username": "ss",
-      "comment": "try a new comment",
-      "commentID": 1,
-      "id": 8
-    },
-    {
-      "username": "ss",
-      "comment": "new comment",
-      "commentID": 5,
-      "id": 9
     }
   ]
 }
