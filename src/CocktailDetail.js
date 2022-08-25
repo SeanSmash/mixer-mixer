@@ -44,7 +44,7 @@ function CocktailDetail ({ currentUser }) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                "comments": [{
+                "comments": [...comments, {
                 "username": newCommentData.username,
                 "comment": newCommentData.comment,
                 "dateCommentCreated": newCommentData.dateCommentCreated
@@ -53,8 +53,8 @@ function CocktailDetail ({ currentUser }) {
         })
         .then(r => r.json())
         .then(data => {
-            setComments([...comments, data.comments])
-            console.log(comments)
+            setComments(data.comments)
+            console.log(data)
         })
     }
 
