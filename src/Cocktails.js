@@ -14,6 +14,7 @@ function Cocktails({ cocktails, onDelete, currentUser }){
                 username={cocktail.username}
                 image={cocktail.image}
                 dateCreated={cocktail.dateCreated}
+                likes={cocktail.likes}
                 onDelete={onDelete}
                 currentUser={currentUser}
             />

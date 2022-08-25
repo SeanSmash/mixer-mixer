@@ -1,7 +1,6 @@
 import React from "react";
 import Gallery from "./Gallery";
 
-
 function Home(){
   return(
     <div>

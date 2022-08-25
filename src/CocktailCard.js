@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 
-function CocktailCard({id, base, description, username, image, dateCreated, currentUser, onDelete }){
+function CocktailCard({id, base, description, username, image, dateCreated, likes, currentUser, onDelete }){
 
     function handleDelete(){
         if (username === currentUser){
@@ -14,7 +14,7 @@ function CocktailCard({id, base, description, username, image, dateCreated, curr
 
     return(
         <div className="cocktail-card">
-            <Link to={`/gallery/${id}`}>
+            <Link to={`/gallery/${id}`} >
             <img src={image} width="100px" alt={base} />
             <p>{username}: <span> {dateCreated}</span> </p>
             </Link>

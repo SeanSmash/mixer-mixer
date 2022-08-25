@@ -5,19 +5,29 @@ function CocktailDetail ({ currentUser }) {
     const [ cocktail, setCocktail ] = useState([])
     const [ comments, setComments ] = useState([])
     const [ newComment, setNewComment ] = useState("")
-    const [ likeCount, setLikeCount ] = useState(0)
     const { id } = useParams()
     const { base, username, description, image, dateCreated, likes } = cocktail
+    const [ likeCount, setLikeCount ] = useState(0)
 
 
     useEffect(() => {
         fetch(`http://localhost:3000/cocktails/${id}`)
         .then(r => r.json())
-        .then(data => setCocktail(data))
-        fetch(`http://localhost:3000/comments/`)
+        .then(data => {
+            setCocktail(data)
+            setLikeCount(data.likes)
+            setComments(data.comments)
+        })
+        //setComments(cocktail.comments)
+        /*fetch(`http://localhost:3000/comments/`)
         .then(r => r.json())
-        .then(data => setComments(data))
+        .then(data => setComments(data))*/
     }, [])
+
+    //console.log(comments)
+
+    //comments.map(comment => console.log(comment))
+
 
     function handleNewCommentInput(e){
         setNewComment(e.target.value)
@@ -41,13 +51,20 @@ function CocktailDetail ({ currentUser }) {
             })
         })
         .then(r => r.json())
-        .then(data => setComments([...comments, data]))
+        //.then(data => setComments([...comments, data]))
     }
 
-    if (!cocktail) return <h2>Loading...</h2>
 
     function handleLikeClick(){
         setLikeCount((likeCount) => likeCount + 1)
+        fetch(`http://localhost:3000/cocktails/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ "likes": likeCount + 1 })
+        })
+        .then(r => r.json())
     }
 
     return (
@@ -65,17 +82,34 @@ function CocktailDetail ({ currentUser }) {
                 </form>
                 <ul>
                     {comments.map(comment => {
-                        if (comment.commentID === parseInt(id, 10)){
                         return (
                             <li key={comment.id}>{comment.username}: {comment.comment}</li>
                         )
-                        }
-                        })
-                    }
+                    })}
                 </ul>
+                
             </div>
         </section>
     )
 }
 
 export default CocktailDetail;
+
+/*{cocktail.comments.map(comment => {
+    if (comment.commentID === parseInt(id, 10)){
+    return (
+        <li key={comment.id}>{comment.username}: {comment.comment}</li>
+    )
+    }
+    })
+}
+
+<ul>
+                    {cocktail.comments.map(comment => {
+                        return (
+                            <li key={comment.id}>{comment.username}: {comment.comment}</li>
+                        )
+                    })}
+                </ul>
+
+*/

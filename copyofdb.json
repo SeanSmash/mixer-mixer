@@ -6,7 +6,12 @@
         "username": "user1",
         "description": "bourbon old fashioned",
         "image": "https://www.liquor.com/thmb/p24WIerjbABYLEL94S5N7B0QQro=/735x0/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__05__08113350__bourbon-old-fashioned-720x720-recipe-ade6f7780c304999be3577e565c9bcdd.jpg",
-        "dateCreated": "22-07-01T13:15:08.623Z"
+        "dateCreated": "22-07-01T13:15:08.623Z",
+        "likes": 3,
+        "comments": [
+          {"username": "ss", "comment": "this drinks rocks"},
+          {"username": "pp", "comment": "i second that..."}
+        ]
       },
       {
         "id": 2,
