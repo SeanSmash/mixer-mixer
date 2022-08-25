@@ -7,17 +7,17 @@
       "description": "bourbon old fashioned",
       "image": "https://www.liquor.com/thmb/p24WIerjbABYLEL94S5N7B0QQro=/735x0/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__05__08113350__bourbon-old-fashioned-720x720-recipe-ade6f7780c304999be3577e565c9bcdd.jpg",
       "dateCreated": "22-07-01T13:15:08.623Z",
-      "likes": 2,
+      "likes": 4,
       "comments": [
         {
-          "id": 1,
           "username": "user1",
-          "comment": "this drinks rocks"
+          "comment": "this drink rocks",
+          "dateCommentCreated": "22-09-01T13:15:08.623Z"
         },
         {
-          "id": 2,
           "username": "user2",
-          "comment": "i second that..."
+          "comment": "looks really good",
+          "dateCommentCreated": "22-09-01T13:16:08.623Z"
         }
       ]
     },
@@ -49,30 +49,20 @@
       "likes": 11
     },
     {
-      "id": 5,
       "base": "gin",
-      "username": "ss",
-      "description": "more gin",
-      "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/royal-mojito-alcoholic-cocktail-with-white-rum-royalty-free-image-1581938500.jpg?crop=0.667xw:1.00xh;0.311xw,0&resize=480:*",
-      "dateCreated": "2022-08-14T22:07:42.601Z",
-      "likes": 2,
+      "username": "user3",
+      "description": "gin and tonic",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.shakedrinkrepeat.com%2Fwp-content%2Fuploads%2F2018%2F03%2Fthe_perfect_gin_and_tonic_recipe_photo.jpg&f=1&nofb=1",
+      "dateCreated": "2022-08-25T17:05:16.486Z",
+      "likes": 0,
       "comments": [
         {
-          "id": 1,
-          "username": "user1",
-          "comment": "this drinks rocks"
-        },
-        {
-          "id": 2,
-          "username": "user2",
-          "comment": "i second that..."
+          "username": "user3",
+          "comment": "test comment",
+          "dateCommentCreated": "2022-08-25T17:06:25.776Z"
         }
-      ]
-    },
-    {
-      "username": "user3",
-      "comment": "comment test",
-      "id": 6
+      ],
+      "id": 5
     }
   ]
 }

@@ -8,6 +8,8 @@ function CocktailDetail ({ currentUser }) {
     const { id } = useParams()
     const { base, username, description, image, dateCreated, likes } = cocktail
     const [ likeCount, setLikeCount ] = useState(0)
+    const date = new Date()
+    const jsonDate = date.toJSON()
 
 
     useEffect(() => {
@@ -18,10 +20,6 @@ function CocktailDetail ({ currentUser }) {
             setLikeCount(data.likes)
             setComments(data.comments)
         })
-        //setComments(cocktail.comments)
-        /*fetch(`http://localhost:3000/comments/`)
-        .then(r => r.json())
-        .then(data => setComments(data))*/
     }, [])
 
     //console.log(comments)
@@ -37,20 +35,27 @@ function CocktailDetail ({ currentUser }) {
         e.preventDefault()
         const newCommentData = {
             username: currentUser,
-            comment: newComment
+            comment: newComment,
+            dateCommentCreated: jsonDate
         }
-        fetch(`http://localhost:3000/cocktails/`, {
-            method: "POST",
+        fetch(`http://localhost:3000/cocktails/${id}`, {
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+                "comments": [{
                 "username": newCommentData.username,
-                "comment": newCommentData.comment
+                "comment": newCommentData.comment,
+                "dateCommentCreated": newCommentData.dateCommentCreated
+                }]
             })
         })
         .then(r => r.json())
-        .then(data => console.log(data))
+        .then(data => {
+            setComments([...comments, data.comments])
+            console.log(comments)
+        })
     }
 
 
@@ -82,7 +87,9 @@ function CocktailDetail ({ currentUser }) {
                 <ul>
                     {comments.map(comment => {
                         return (
-                            <li key={comment.id}>{comment.username}: {comment.comment}</li>
+                            <li key={comment.dateCommentCreated}>
+                                {comment.username}: {comment.comment} ({comment.dateCommentCreated})
+                            </li>
                         )
                     })}
                 </ul>
@@ -93,22 +100,3 @@ function CocktailDetail ({ currentUser }) {
 }
 
 export default CocktailDetail;
-
-/*{cocktail.comments.map(comment => {
-    if (comment.commentID === parseInt(id, 10)){
-    return (
-        <li key={comment.id}>{comment.username}: {comment.comment}</li>
-    )
-    }
-    })
-}
-
-<ul>
-                    {cocktail.comments.map(comment => {
-                        return (
-                            <li key={comment.id}>{comment.username}: {comment.comment}</li>
-                        )
-                    })}
-                </ul>
-
-*/

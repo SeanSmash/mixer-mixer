@@ -38,7 +38,9 @@ function NewCocktailForm({ currentUser, onNewCocktail }) {
                 "username": newCocktail.username,
                 "description": newCocktail.description,
                 "image": newCocktail.image,
-                "dateCreated": newCocktail.dateCreated
+                "dateCreated": newCocktail.dateCreated,
+                "likes": 0,
+                "comments": []
             })
         })
         .then(r => r.json())
