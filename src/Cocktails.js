@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import CocktailCard from "./CocktailCard";
+import { CurrentUserContext } from "./UserInfo"
 
-function Cocktails({ cocktails, onDelete, currentUser }){
+function Cocktails({ cocktails, onDelete }){
+    const currentUser = useContext(CurrentUserContext)
 
     return(
         <div>
@@ -16,7 +18,6 @@ function Cocktails({ cocktails, onDelete, currentUser }){
                 dateCreated={cocktail.dateCreated}
                 likes={cocktail.likes}
                 onDelete={onDelete}
-                currentUser={currentUser}
             />
         ))}
         </div>

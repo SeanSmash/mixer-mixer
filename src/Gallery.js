@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Cocktails from "./Cocktails";
 import Search from "./Search";
 import NewCocktailForm from "./NewCocktailForm";
+import { CurrentUserContext } from "./UserInfo";
 
-function Gallery ({ currentUser }) {
+function Gallery () {
     const [ allCocktails, setAllCocktails ] = useState([])
     const [ searchTerm, setSearchTerm ] = useState("")
+    const currentUser = useContext(CurrentUserContext)
 
 
     useEffect(() => {
@@ -47,14 +49,12 @@ function Gallery ({ currentUser }) {
                 <h2>Who's Mixing?</h2>
             </header>
             <NewCocktailForm 
-                currentUser={currentUser} 
                 onNewCocktail={handleNewCocktail} 
             />
             <Search onSearchInput={handleSearch} />
             <Cocktails 
                 cocktails={cocktailsToDisplay} 
                 onDelete={handleDelete} 
-                currentUser={currentUser}
             />
         </>
     )

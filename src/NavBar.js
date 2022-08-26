@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { CurrentUserContext } from './UserInfo';
 
 
-function NavBar({ currentUser, loginStatus }){
+function NavBar({ loginStatus }){
+    const currentUser = useContext(CurrentUserContext)
 
     return (
         <>

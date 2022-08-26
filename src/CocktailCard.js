@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom"
+import { CurrentUserContext } from "./UserInfo";
 
-function CocktailCard({id, base, description, username, image, dateCreated, likes, currentUser, onDelete }){
+function CocktailCard({id, base, description, username, image, dateCreated, likes, onDelete }){
+    const currentUser = useContext(CurrentUserContext)
 
     function handleDelete(){
         if (username === currentUser){

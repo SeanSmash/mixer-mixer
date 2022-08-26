@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom"
+import { CurrentUserContext } from "./UserInfo"
 
-function CocktailDetail ({ currentUser }) {
+function CocktailDetail () {
     const [ cocktail, setCocktail ] = useState([])
     const [ comments, setComments ] = useState([])
     const [ newComment, setNewComment ] = useState("")
@@ -10,6 +11,7 @@ function CocktailDetail ({ currentUser }) {
     const [ likeCount, setLikeCount ] = useState(0)
     const date = new Date()
     const jsonDate = date.toJSON()
+    const currentUser = useContext(CurrentUserContext)
 
 
     useEffect(() => {

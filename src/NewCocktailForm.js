@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CurrentUserContext } from "./UserInfo";
 
-function NewCocktailForm({ currentUser, onNewCocktail }) {
+function NewCocktailForm({ onNewCocktail }) {
     const [ baseLiquor, setBaseLiquor ] = useState("")
     const [ cocktailDescription, setCocktailDescription ] = useState("")
     const [ imageURL, setImageURL ] = useState("")
     const date = new Date()
     const jsonDate = date.toJSON()
+    const currentUser = useContext(CurrentUserContext)
 
     function onBaseLiquorInput(e){
         setBaseLiquor(e.target.value)
