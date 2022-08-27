@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import NavBar from './NavBar';
 import Home from './Home';
 import About from './About';
@@ -20,7 +20,10 @@ function App() {
       )
     } else {
       return (
-        <Link to={`/login`}><button>Please Login</button></Link>
+        <nav>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/login"> Login</NavLink>
+        </nav>
       )
     }
   }

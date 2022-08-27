@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import { CurrentUserContext } from "./UserInfo";
 
@@ -6,6 +6,10 @@ function Login () {
     const [ userName, setUserName ] = useState("")
     const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
     const navigate = useNavigate()
+
+    useEffect(() => {
+        setCurrentUser("")
+    }, [])
 
     function handleUserName(e){
         setUserName(e.target.value) 
