@@ -15,7 +15,7 @@ function Home(){
 
   return(
     <div>
-      <header className="App-header">
+      <header className="Home">
         <img src="https://craftandcocktails.co/wp-content/uploads/2020/05/COFFEE-BEAN-BAMBOO-COCKTAIL-5-520x400.jpg" alt="logo" />
         <p>
           Mixer Mixer

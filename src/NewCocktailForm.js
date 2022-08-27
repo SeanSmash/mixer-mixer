@@ -18,7 +18,11 @@ function NewCocktailForm({ onNewCocktail }) {
     }
 
     function handleImageInput(e){
-        setImageURL(e.target.value)
+        if (e.target.value === ""){
+            setImageURL("../public/default_cocktail.png")
+        } else {
+            setImageURL(e.target.value)
+        }
     }
 
     function handleSubmit(e){
@@ -47,6 +51,7 @@ function NewCocktailForm({ onNewCocktail }) {
         })
         .then(r => r.json())
         .then(data => onNewCocktail(data))
+        
     }
 
     
@@ -56,7 +61,7 @@ function NewCocktailForm({ onNewCocktail }) {
             <input onChange={onBaseLiquorInput} type="text" placeholder="base liquor" />
             <input onChange={onCoctailDescriptionInput} type="text" placeholder="add your recipe, thoughts, details, etc" />
             <input onChange={handleImageInput} type="text" placeholder="image URL" />
-            <button>Submit</button>
+            <button>Add Cocktail</button>
         </form>
     )
 }

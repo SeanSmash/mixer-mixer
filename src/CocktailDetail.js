@@ -79,8 +79,8 @@ function CocktailDetail () {
 
     return (
         <section>
-            <div className="cocktail-card">
-                <img src={image} width="100px" alt={base} />
+            <div className="cocktail-detail">
+                <img src={image} width="200px" alt={base} />
                 <p>{username}: <span> {dateCreated}</span> </p>
                 <button onClick={handleDelete} >Delete</button>
                 <p>Base: {base}</p>

@@ -6,11 +6,9 @@ function CocktailCard({id, base, description, username, image, dateCreated, like
     return(
         <div className="cocktail-card">
             <Link to={`/gallery/${id}`} >
-            <img src={image} width="100px" alt={base} />
-            <p>{username}: <span> {dateCreated}</span> </p>
+            <img src={image} width="200px" alt="Cocktail Image" />
+            <p>{username}</p>
             </Link>
-            <p>Base: {base}</p>
-            <p>Description: {description} </p>
         </div>
     )
 }

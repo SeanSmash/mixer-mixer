@@ -1,10 +1,10 @@
 import React from "react";
 import CocktailCard from "./CocktailCard";
 
-function Cocktails({ cocktails, onDelete }){
+function Cocktails({ cocktails }){
 
     return(
-        <div>
+        <div className="Cocktails">
         {cocktails.map(cocktail =>(
             <CocktailCard 
                 key={cocktail.id}
@@ -15,7 +15,6 @@ function Cocktails({ cocktails, onDelete }){
                 image={cocktail.image}
                 dateCreated={cocktail.dateCreated}
                 likes={cocktail.likes}
-                onDelete={onDelete}
             />
         ))}
         </div>
