@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import CocktailCard from "./CocktailCard";
-import { CurrentUserContext } from "./UserInfo"
 
 function Cocktails({ cocktails, onDelete }){
-    const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
 
     return(
         <div>

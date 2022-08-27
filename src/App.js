@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import NavBar from './NavBar';
 import Home from './Home';
@@ -11,23 +11,12 @@ import './App.css';
 
 
 function App() {
-  const [ isLoggedIn, setIsLoggedIn ] = useState(true)
   const [currentUser, setCurrentUser ] = useContext(CurrentUserContext)
 
-  function handleLoginChange(){
-    setIsLoggedIn((isLoggedIn) => !isLoggedIn)
-  }
-
-  function handleCurrentUser(username){
-    //setCurrentUser(username)
-  }
-
   function navBarShow(){
-    if (isLoggedIn) {
+    if (currentUser !== "") {
       return (
-        <NavBar 
-          loginStatus={isLoggedIn} 
-        />
+        <NavBar />
       )
     } else {
       return (
@@ -46,7 +35,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route 
           path="/login" 
-          element={<Login onCurrentUser={handleCurrentUser} onLoginChange={handleLoginChange} />} 
+          element={<Login />} 
         />
         <Route path="/gallery/:id" element={<CocktailDetail />} />
         <Route path="/" element={<Home />} />

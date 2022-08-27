@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Gallery from "./Gallery";
+import { CurrentUserContext } from "./UserInfo";
 
 function Home(){
+  const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
+
+  function galleryShow(){
+    if (currentUser !== "") {
+      return (
+        <Gallery/>
+      )
+    }
+  }
+
   return(
     <div>
       <header className="App-header">
@@ -13,7 +24,7 @@ function Home(){
           A CockTale Sharing Community
         </p>
       </header>
-      <Gallery />
+      {galleryShow()}
     </div>
   )
 }

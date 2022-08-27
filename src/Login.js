@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CurrentUserContext } from "./UserInfo";
 
-function Login ({ onCurrentUser, onLoginChange }) {
-    const [ userName, setUsername ] = useState("")
-
+function Login () {
+    const [ userName, setUserName ] = useState("")
+    const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
 
     function handleUserName(e){
-        setUsername(e.target.value) 
+        setUserName(e.target.value) 
     }
 
     function handleUserNameSubmit(e){
         e.preventDefault()
-        onCurrentUser(userName)
-        onLoginChange()
+        setCurrentUser(userName)
     }
 
     return (

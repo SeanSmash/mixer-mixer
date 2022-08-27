@@ -24,11 +24,6 @@ function CocktailDetail () {
         })
     }, [])
 
-    //console.log(comments)
-
-    //comments.map(comment => console.log(comment))
-
-
     function handleNewCommentInput(e){
         setNewComment(e.target.value)
     }
@@ -56,7 +51,6 @@ function CocktailDetail () {
         .then(r => r.json())
         .then(data => {
             setComments(data.comments)
-            console.log(data)
         })
     }
 

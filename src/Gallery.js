@@ -1,14 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import Cocktails from "./Cocktails";
 import Search from "./Search";
 import NewCocktailForm from "./NewCocktailForm";
-import { CurrentUserContext } from "./UserInfo";
 
 function Gallery () {
     const [ allCocktails, setAllCocktails ] = useState([])
     const [ searchTerm, setSearchTerm ] = useState("")
-    const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
-
 
     useEffect(() => {
         fetch("http://localhost:3000/cocktails")

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { CurrentUserContext } from './UserInfo';
 
 
-function NavBar({ loginStatus }){
+function NavBar(){
     const [currentUser, setCurrentUser ] = useContext(CurrentUserContext)
 
     return (

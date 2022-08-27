@@ -29,7 +29,13 @@
       "image": "https://www.liquor.com/thmb/RbdWTl4f1P8BgmCmszFq6edveKs=/735x0/vodka-martini-720x720-primary-7bf9f33f067c4f81b53d8f1f73bdd4a2.jpg",
       "dateCreated": "22-06-01T13:15:08.623Z",
       "likes": 5,
-      "comments": []
+      "comments": [
+        {
+          "username": "user22",
+          "comment": "this is new comment",
+          "dateCommentCreated": "2022-08-27T03:03:14.981Z"
+        }
+      ]
     },
     {
       "id": 3,

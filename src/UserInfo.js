@@ -5,7 +5,7 @@ const CurrentUserContext = createContext()
 
 // create the context provider (component)
 function CurrentUserProvider({ children }){
-    const [ currentUser, setCurrentUser ] = useState("user22")
+    const [ currentUser, setCurrentUser ] = useState("")
 
     const value = [currentUser, setCurrentUser]
 
