@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { CurrentUserContext } from "./UserInfo"
 
 function CocktailDetail () {
@@ -12,6 +12,7 @@ function CocktailDetail () {
     const date = new Date()
     const jsonDate = date.toJSON()
     const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -23,6 +24,15 @@ function CocktailDetail () {
             setComments(data.comments)
         })
     }, [])
+
+    function handleDelete(){
+        if (username === currentUser){
+            fetch(`http://localhost:3000/cocktails/${id}`, {
+                method:"DELETE"
+            })
+            navigate("/gallery")
+        } else alert("You can only delete your posts")
+    }
 
     function handleNewCommentInput(e){
         setNewComment(e.target.value)
@@ -72,6 +82,7 @@ function CocktailDetail () {
             <div className="cocktail-card">
                 <img src={image} width="100px" alt={base} />
                 <p>{username}: <span> {dateCreated}</span> </p>
+                <button onClick={handleDelete} >Delete</button>
                 <p>Base: {base}</p>
                 <p>Description: {description} </p>
                 <button onClick={handleLikeClick}>Like &#10084;</button>

@@ -1,19 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom"
-import { CurrentUserContext } from "./UserInfo";
 
-function CocktailCard({id, base, description, username, image, dateCreated, likes, onDelete }){
-    const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
-
-    function handleDelete(){
-        if (username === currentUser){
-            fetch(`http://localhost:3000/cocktails/${id}`, {
-                method:"DELETE"
-            })
-            onDelete(id)
-        } else alert("You can only delete your posts")
-    }
-
+function CocktailCard({id, base, description, username, image, dateCreated, likes }){
+    
     return(
         <div className="cocktail-card">
             <Link to={`/gallery/${id}`} >
@@ -22,7 +11,6 @@ function CocktailCard({id, base, description, username, image, dateCreated, like
             </Link>
             <p>Base: {base}</p>
             <p>Description: {description} </p>
-            <button onClick={handleDelete} >Delete</button>
         </div>
     )
 }

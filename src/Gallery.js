@@ -28,14 +28,6 @@ function Gallery () {
             return true
     })    
 
-    function handleDelete(id){
-        setAllCocktails(allCocktails.filter(cocktail =>{
-            if (id !== cocktail.id){
-                return true
-            }
-        })
-    )}
-
     function handleNewCocktail(newCocktail){
         setAllCocktails([...allCocktails, newCocktail])
     }
@@ -51,7 +43,6 @@ function Gallery () {
             <Search onSearchInput={handleSearch} />
             <Cocktails 
                 cocktails={cocktailsToDisplay} 
-                onDelete={handleDelete} 
             />
         </>
     )
