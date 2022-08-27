@@ -11,7 +11,7 @@ function CocktailDetail () {
     const [ likeCount, setLikeCount ] = useState(0)
     const date = new Date()
     const jsonDate = date.toJSON()
-    const currentUser = useContext(CurrentUserContext)
+    const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
 
 
     useEffect(() => {

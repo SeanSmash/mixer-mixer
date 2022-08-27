@@ -1,32 +1,26 @@
-import React, { createContext } from "react"
+import React, { createContext, useState } from "react"
 
 // create the context object
-//const PauseContext = createContext()
 const CurrentUserContext = createContext()
 
 // create the context provider (component)
-/*function PauseProvider({ children }) {
-    
-    return (
-        <PauseContext.Provider value={true}>
-            {children}
-        </PauseContext.Provider>
-    )
-}*/
-
 function CurrentUserProvider({ children }){
+    const [ currentUser, setCurrentUser ] = useState("user22")
+
+    const value = [currentUser, setCurrentUser]
+
     return (
-        <CurrentUserContext.Provider value="user11">
+        <CurrentUserContext.Provider value={value}>
             {children}
         </CurrentUserContext.Provider>
     )
 }
 
 // export
-//export { PauseContext, PauseProvider }
 export { CurrentUserContext, CurrentUserProvider}
 
+// Wrap application
 // ReactDOM.render(
-//    <PausedProvider>
+//    <CurrentUserProvider>
 //      <App />
-//    </PausedProvicer>
+//    </CurrentUserProvider>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { CurrentUserContext } from "./UserInfo";
 
 function CocktailCard({id, base, description, username, image, dateCreated, likes, onDelete }){
-    const currentUser = useContext(CurrentUserContext)
+    const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
 
     function handleDelete(){
         if (username === currentUser){

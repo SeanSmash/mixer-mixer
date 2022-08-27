@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   const [ isLoggedIn, setIsLoggedIn ] = useState(true)
-  const currentUser = useContext(CurrentUserContext)
+  const [currentUser, setCurrentUser ] = useContext(CurrentUserContext)
 
   function handleLoginChange(){
     setIsLoggedIn((isLoggedIn) => !isLoggedIn)

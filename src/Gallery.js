@@ -7,7 +7,7 @@ import { CurrentUserContext } from "./UserInfo";
 function Gallery () {
     const [ allCocktails, setAllCocktails ] = useState([])
     const [ searchTerm, setSearchTerm ] = useState("")
-    const currentUser = useContext(CurrentUserContext)
+    const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
 
 
     useEffect(() => {

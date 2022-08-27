@@ -7,7 +7,7 @@ function NewCocktailForm({ onNewCocktail }) {
     const [ imageURL, setImageURL ] = useState("")
     const date = new Date()
     const jsonDate = date.toJSON()
-    const currentUser = useContext(CurrentUserContext)
+    const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
 
     function onBaseLiquorInput(e){
         setBaseLiquor(e.target.value)

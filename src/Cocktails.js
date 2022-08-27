@@ -3,7 +3,7 @@ import CocktailCard from "./CocktailCard";
 import { CurrentUserContext } from "./UserInfo"
 
 function Cocktails({ cocktails, onDelete }){
-    const currentUser = useContext(CurrentUserContext)
+    const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
 
     return(
         <div>

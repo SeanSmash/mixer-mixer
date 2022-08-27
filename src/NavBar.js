@@ -4,7 +4,7 @@ import { CurrentUserContext } from './UserInfo';
 
 
 function NavBar({ loginStatus }){
-    const currentUser = useContext(CurrentUserContext)
+    const [currentUser, setCurrentUser ] = useContext(CurrentUserContext)
 
     return (
         <>
