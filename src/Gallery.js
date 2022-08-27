@@ -10,7 +10,7 @@ function Gallery () {
     useEffect(() => {
         fetch("http://localhost:3000/cocktails")
         .then(r => r.json())
-        .then(data => setAllCocktails(data))
+        .then(data => setAllCocktails(data.reverse()))
     }, [])
 
     function handleSearch(searchTerm){
@@ -29,7 +29,7 @@ function Gallery () {
     })    
 
     function handleNewCocktail(newCocktail){
-        setAllCocktails([...allCocktails, newCocktail])
+        setAllCocktails([newCocktail, ...allCocktails])
     }
 
     return (
