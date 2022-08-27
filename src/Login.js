@@ -1,9 +1,11 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom"
 import { CurrentUserContext } from "./UserInfo";
 
 function Login () {
     const [ userName, setUserName ] = useState("")
     const [ currentUser, setCurrentUser ] = useContext(CurrentUserContext)
+    const navigate = useNavigate()
 
     function handleUserName(e){
         setUserName(e.target.value) 
@@ -12,6 +14,7 @@ function Login () {
     function handleUserNameSubmit(e){
         e.preventDefault()
         setCurrentUser(userName)
+        navigate("/")
     }
 
     return (
