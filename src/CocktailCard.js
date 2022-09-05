@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"
 
 function CocktailCard({id, base, description, username, image, dateCreated, likes }){
+    //left unused props in case they'll be incorporated later
     
     return(
         <div className="cocktail-card">

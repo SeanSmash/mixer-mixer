@@ -22,12 +22,10 @@ nav a.active {
 }
 
 .Cocktails {
-  justify-content: space-evenly;
 }
 
 .cocktail-card {
   width: 225px;
-  height: 300px;
   border-style: double;
   border-width: medium;
   border-radius: 50px;

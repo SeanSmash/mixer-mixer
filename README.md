@@ -1,18 +1,7 @@
 # Mixer Mixer
 
-In the project directory, you can run:
+This is a one-page application that lets users share their cocktail drinking experiences.  Only users who sign in can use the full functionality of the application.  Once logged in, users can view the gallery of posts, search posts, view the details of posts, like and comment on posts, create their own cocktail contribution, and delete only their own posts.  
 
-### `npm start`
+### Running the application 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-
-npm install react-router-dom
-
-npm install
-json-server --watch db.json
-npm start
+Download the project to your local environment.  Using the terminal from within the project directory run the command: `json-server --watch db.json` to start the server replication.  Then run the command: `npm start` the run the application in development mode.
